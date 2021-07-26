@@ -1,3 +1,5 @@
+#an attempt to build a selection sort algorithm from scratch
+
 def selection_sort(list1):
     counter = 0
     updated_list = []
