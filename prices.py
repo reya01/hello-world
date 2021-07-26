@@ -15,7 +15,8 @@ def create_txt():
 def api_call():
     
     #call API and then put that data into a JSON dictionary {sys.argv[1].upper()}
-    url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={sys.argv[1].upper()}&outputsize=full&apikey=IMJ3EQ99Q09J1UW0'
+    ticker = sys.argv[1].upper()
+    url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&outputsize=full&apikey=IMJ3EQ99Q09J1UW0'
     r = requests.get(url)
     stock_data = r.json()
     
@@ -23,7 +24,7 @@ def api_call():
     close_price = 0
     str_index = 0
     
-    f = open(f'prices.{sys.argv[1].upper()}.txt', 'w')
+    f = open(f'prices.{ticker}.txt', 'w')
     
     for dates in stock_data['Time Series (Daily)']:
         close_price = stock_data['Time Series (Daily)'][dates]['4. close']
