@@ -1,3 +1,5 @@
+#a program to pull the last 20 years of closing stock prices when ticket is passed to command line and output them as a text file
+
 import requests
 import sys
 import json
