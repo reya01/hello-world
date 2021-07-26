@@ -1,3 +1,4 @@
+#a function to read in a text file from command line and count the number of words by length, romeo and juliet by default
 import sys
 
 #this function opens the file, removes punctuation, and returns a clean version
